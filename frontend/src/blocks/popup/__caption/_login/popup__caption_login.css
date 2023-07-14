@@ -1,0 +1,13 @@
+.popup__caption_login {
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  margin: 15px 0 0;
+  cursor: pointer;
+  transition: opacity .2s linear;
+}
+
+.popup__caption_login:hover {
+  opacity: 0.8;
+}
