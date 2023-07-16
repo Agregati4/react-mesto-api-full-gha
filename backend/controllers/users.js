@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 const NotFoundError = require('../errors/NotFoundError');
@@ -25,9 +26,7 @@ const login = (req, res, next) => {
     .catch(next);
 };
 
-const logOut = (req, res, next) => {
-  return res.status(200).clearCookie('jwt').send({ message: 'jwt успешно удален' });
-};
+const logOut = (req, res) => res.status(200).clearCookie('jwt').send({ message: 'jwt успешно удален' });
 
 const getUsers = (req, res, next) => {
   User.find({})

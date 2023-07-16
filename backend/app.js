@@ -1,17 +1,31 @@
 const express = require('express');
+
 const mongoose = require('mongoose');
+
 require('dotenv').config();
+
 const cors = require('cors');
+
 const bodyParser = require('body-parser');
+
 const cookieParser = require('cookie-parser');
+
 const helmet = require('helmet');
+
 const ratelimit = require('express-rate-limit');
+
 const { celebrate, Joi, errors } = require('celebrate');
+
 const NotFoundError = require('./errors/NotFoundError');
+
 const RegularURL = require('./utils/RegularURL');
+
 const { login, logOut, createUser } = require('./controllers/users');
+
 const auth = require('./middlewares/auth');
+
 const errorHandler = require('./middlewares/error-handler');
+
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 4000, DB_URL = 'mongodb://0.0.0.0:27017/mestodb' } = process.env;
@@ -37,7 +51,9 @@ mongoose.connect(DB_URL);
 app.use(requestLogger);
 
 app.use('/users', auth, require('./routes/users'));
+
 app.use('/cards', auth, require('./routes/cards'));
+
 app.use('/logout', logOut);
 
 app.get('/crash-test', () => {

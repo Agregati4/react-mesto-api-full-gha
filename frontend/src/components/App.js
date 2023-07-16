@@ -141,16 +141,15 @@ function App() {
       .catch((err) => {
         console.log(`Ошибка при запросе данных с сервера: ${err.name} - ${err.message}`);
       });
+    } else {
+      api.increaseLikesQuantity(card._id)
+      .then((newCard) => {
+        setCards((state) => state.map((c) => c._id === card._id ? newCard.data : c));
+      })
+      .catch((err) => {
+        console.log(`Ошибка при запросе данных с сервера: ${err.name} - ${err.message}`);
+      });
     };
-
-    // Добавление карточки
-    api.increaseLikesQuantity(card._id)
-    .then((newCard) => {
-      setCards((state) => state.map((c) => c._id === card._id ? newCard.data : c));
-    })
-    .catch((err) => {
-      console.log(`Ошибка при запросе данных с сервера: ${err.name} - ${err.message}`);
-    });
   };
 
   function handleUpdateUser({name, activity}) {
