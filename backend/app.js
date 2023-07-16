@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(helmet());
 app.use(limiter);
-app.use(cors({ origin: 'http://mesto-testo.nomoredomains.work', credentials: true }));
+app.use(cors({ origin: 'https://mesto-testo.nomoredomains.work', credentials: true }));
 
 mongoose.connect(DB_URL);
 
