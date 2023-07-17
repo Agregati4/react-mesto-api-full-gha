@@ -32,6 +32,7 @@ function App() {
   const [ headerEmail, setHeaderEmail ] = React.useState('');
   const [ headerButtonText, setHeaderButtonText ] = React.useState('Регистрация');
   const [ headerButtonNav, setHeaderButtonNav ] = React.useState('/sign-up');
+  const [ pageDisplayNone, setPageDisplayNone ] = React.useState(true);
 
   React.useEffect(() => {
     if(headerButtonText === "Регистрация") {
@@ -49,9 +50,11 @@ function App() {
       setLoggedIn(true);
       setHeaderButtonText('Выйти');
       navigate('/');
+      setPageDisplayNone(false);
     })
     .catch((err) => {
       console.log(`Ошибка при запросе данных с сервера: ${err.name} - ${err.message}`);
+      setPageDisplayNone(false);
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -267,7 +270,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <div className="page">
+      <div className={ `page ${ pageDisplayNone && 'displayNone' }`}>
         <div className="page__content">
           <EditProfilePopup isOpen={ isEditProfilePopupOpen } onClose={ closeAllPopups } onUpdateUser={ handleUpdateUser } isLoading={ isLoading } />
           <AddPlacePopup isOpen={ isAddPlacePopupOpen } onClose={ closeAllPopups } onAddPlace={ handleAddPlaceSubmit } isLoading={ isLoading } />
