@@ -1,10 +1,16 @@
 .header__email {
   color: white;
-  margin: 6px 0 0;
+  margin: 6px 24px 0 auto;
   padding: 0;
-  justify-self: end;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.22;
   align-self: flex-start;
+}
+
+@media all and (max-width: 520px) {
+  .header__email {
+    margin: 40px 0 0;
+    align-self: center;
+  }
 }

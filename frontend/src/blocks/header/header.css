@@ -3,8 +3,7 @@
   margin: 45px 0 0;
   border-bottom: 1px solid rgba(84, 84, 84, .7);
   box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 16.14% 1fr 10%;
+  display: flex;
 }
 
 @media all and (max-width: 768px) {
@@ -13,9 +12,10 @@
   }
 }
 
-@media all and (max-width: 425px) {
+@media all and (max-width: 520px) {
   .header {
+    flex-direction: column;
     width: 100%;
-    margin: 28px 0 0;
+    margin: 0;
   }
 }

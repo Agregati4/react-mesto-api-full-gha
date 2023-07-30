@@ -2,9 +2,9 @@
   margin: 0 0 37px;
 }
 
-@media all and (max-width: 425px) {
+@media all and (max-width: 520px) {
   .logo {
-    margin: 0 0 27px 27px;
+    margin: auto 0 auto 27px;
     max-width: 104px;
     max-height: 24px;
   }

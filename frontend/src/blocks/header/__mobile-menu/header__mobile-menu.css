@@ -1,0 +1,12 @@
+.header__mobile-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media all and (max-width: 520px) {
+  .header__mobile-menu {
+    order: 3;
+    min-height: 83px;
+    border-top: 1px solid rgba(84, 84, 84, .7);
+  }
+}
