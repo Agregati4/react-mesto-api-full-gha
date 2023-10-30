@@ -9,3 +9,5 @@
 - То же самое проделайте для папки frontend
 - Для каждой папки(backend и frontend) выполните команду *npm start*
 - В браузере откройте *localhost:3000*
+
+![image](https://github.com/Agregati4/react-mesto-api-full-gha/assets/117747237/654f3ead-2da8-4019-9995-c58ebe23f49c)
